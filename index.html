@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Live weather dashboard with current weather information." />
+  <title>SkyCast - Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="dashboard">
+    <header class="header">
+      <a class="logo" href="#" aria-label="SkyCast home">
+        <span class="logo-icon">☀</span> SkyCast
+      </a>
+      <span class="live-badge"><span></span> LIVE WEATHER</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+      <h1>Weather, <span>simplified.</span></h1>
+      <p class="subtitle">
+        Discover current weather conditions anywhere in the world.
+      </p>
+
+      <form id="searchForm" class="search-form">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter a city, e.g. Patna"
+          aria-label="City name"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="searchButton">Search ↗</button>
+      </form>
+
+      <p class="hint">Try Patna, London, Tokyo or New York</p>
+    </section>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <section id="weatherCard" class="weather-card" hidden>
+      <div class="weather-top">
+        <div>
+          <p class="eyebrow">CURRENT WEATHER</p>
+          <h2 id="cityName">Patna</h2>
+          <p id="weatherDescription">Clear sky</p>
+          <p id="localTime" class="local-time"></p>
+        </div>
+        <div class="weather-symbol" id="weatherIcon" aria-hidden="true">☀️</div>
+      </div>
+
+      <div class="temperature-row">
+        <div class="temperature">
+          <span id="temperature">28</span><sup>°C</sup>
+        </div>
+        <div class="feels-like">
+          <span>Feels like</span>
+          <strong id="feelsLike">30°C</strong>
+        </div>
+      </div>
+
+      <div class="weather-divider"></div>
+
+      <div class="metrics">
+        <article class="metric">
+          <div class="metric-icon">💧</div>
+          <div>
+            <p>Humidity</p>
+            <strong id="humidity">--%</strong>
+          </div>
+        </article>
+
+        <article class="metric">
+          <div class="metric-icon">💨</div>
+          <div>
+            <p>Wind speed</p>
+            <strong id="windSpeed">-- km/h</strong>
+          </div>
+        </article>
+
+        <article class="metric">
+          <div class="metric-icon">🌡️</div>
+          <div>
+            <p>Pressure</p>
+            <strong id="pressure">-- hPa</strong>
+          </div>
+        </article>
+
+        <article class="metric">
+          <div class="metric-icon">☁️</div>
+          <div>
+            <p>Cloud cover</p>
+            <strong id="cloudCover">--%</strong>
+          </div>
+        </article>
+      </div>
+
+      <footer class="card-footer">
+        <span>Weather data by Open-Meteo</span>
+        <button type="button" id="refreshButton">↻ Refresh</button>
+      </footer>
+    </section>
+
+    <footer class="page-footer">
+      Built with HTML, CSS & JavaScript <span>•</span> Powered by Fetch API
+    </footer>
+  </main>
+</body>
+</html>
